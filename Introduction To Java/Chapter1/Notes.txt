@@ -1,0 +1,60 @@
+Chapter 1
+---------
+Java syntax is defined in the Java language specification, and the Java library is
+defined in the Java API. The JDK is the software for developing and running Java
+programs. An IDE is an integrated development environment for rapidly developing
+programs.
+
+Java language specification is a technical definition of the Java programming
+language’s syntax and semantics.
+
+Java is a full-fledged and powerful language that can be used in many ways. It comes in
+three editions:
+        ■ Java Standard Edition (Java SE) to develop client-side applications. The applications can run standalone or as applets running from a Web browser.
+        ■ Java Enterprise Edition (Java EE) to develop server-side applications, such as Java servlets, JavaServer Pages (JSP), and JavaServer Faces (JSF).
+        ■ Java Micro Edition (Java ME) to develop applications for mobile devices, such as cell phones.
+
+
+A pair of curly braces in a program forms a block that groups the program’s components.
+In Java, each block begins with an opening brace ({) and ends with a closing brace (}). Every
+class has a class block that groups the data and methods of the class. Similarly, every method
+has a method block that groups the statements in the method. Blocks can be nested, meaning
+that one block can be placed within another, as shown in the following code.
+
+TABLE 1.2 Special Characters
+---------------------------------------------------------------
+Character         Name                          Description
+---------------------------------------------------------------
+{}                Opening and closing braces               Denote a block to enclose statements.
+()                Opening and closing parentheses          Used with methods.
+[]                Opening and closing brackets             Denote an array.
+//                Double slashes                           Precede a comment line.
+""                Opening and closing quotation marks      Enclose a string (i.e., sequence of characters).
+;                 Semicolon                                Mark the end of a statement.
+
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("3.5 * 4 / 2 – 2.5 is ");        Answer: 3.5 * 4 / 2 – 2.5 is 
+        System.out.println(3.5 * 4 / 2 – 2.5);                      4.5
+        
+}
+}
+
+The compiler generates a bytecode file with a .class extension. Thus, the preceding command generates a file named Welcome.class
+
+The bytecode is similar to machine instructions but is architecture neutral and can run on any platform that has a Java Virtual Machine (JVM)
+
+Java bytecode can run on a variety of hardware platforms and operating systems
+
+(a) Java source code is translated into bytecode. 
+(b) Java bytecode can be executed on any computer with a Java Virtual Machine.
+
+LISTING 1.4 ShowSyntaxErrors.java
+1 public class ShowSyntaxErrors {
+2    public static main(String[] args) {
+3       System.out.println("Welcome to Java);
+4    }
+5 }
+      Four errors are reported, but the program actually has two errors:
+          ■ The keyword void is missing before main in line 2.
+          ■ The string Welcome to Java should be closed with a closing quotation mark in line 3. Since a single error will often display many lines of compile errors, it is a good practice to fix errors from the top line and work downward.
