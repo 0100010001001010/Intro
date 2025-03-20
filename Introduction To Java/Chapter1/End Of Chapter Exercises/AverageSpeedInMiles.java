@@ -13,7 +13,7 @@ public class AverageSpeedInMiles {
      */
     public static void main(String[] args) {
         //First, convert the distance from kilometers to miles:
-        double miles = 14 * 0.621371; //= 8.699194 miles
+        double miles = 14 * 0.621371; //8.699194 miles
 
         //Next, convert the time from minutes and seconds to hours:
         double hours = 45.5 / 60; //0.75833
