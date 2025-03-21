@@ -1,0 +1,114 @@
+Chapter 2
+----------
+
+An algorithm describes how a problem is solved by listing the actions that need to be taken and the order of their execution.
+
+pseudocode (natural language mixed with some programming code)
+
+A variable represents a value stored in the computer’s memory.
+
+To let the compiler know what radius and area are, specify their data types. That is the kind of data stored in a variable, whether integer, 
+real number, or something else. This is known as declaring variables.
+
+Java provides simple data types for representing integers, real numbers, characters, and Boolean types. These types are known as primitive
+data types or fundamental types.
+
+Variables such as radius and area correspond to memory locations. Every variable has
+a name, a type, a size, and a value.
+
+Each row in the table shows the values of variables after the statement in the corresponding line in
+the program is executed. This method of reviewing how a program works is called tracing a program.
+
+The plus sign (+) has two meanings: one for addition and the other for concatenating (combining) strings. The plus sign (+) in lines 13–14 
+is called a string concatenation operator.
+
+A string cannot cross lines in the source code. Thus, the following statement would
+result in a compile error:
+                System.out.println("Introduction to Java Programming,
+                                         by Y. Daniel Liang");
+                To fix the error, break the string into separate substrings, and use the concatenation
+                operator (+) to combine them:
+                System.out.println("Introduction to Java Programming, " +
+                                          "by Y. Daniel Liang");
+
+Console input is not directly supported in Java, but you can use the Scanner class to create an object to read input from System.in,
+as follows:
+             Scanner input = new Scanner(System.in);
+
+The whole line Scanner input = new Scanner(System.in) creates a Scanner object and assigns its reference to the variable input.
+
+The program displays a string "Enter a number for radius: " to the console. This is
+known as a prompt, because it directs the user to enter an input. 
+
+The wildcard import imports all the classes in a package by using the asterisk as the
+wildcard. For example, the following statement imports all the classes from the package
+java.util.
+          import java.uitl.*;
+
+
+Most of the programs in the early chapters of this book perform three steps—input, process, and output—called IPO. Input is receiving input 
+from the user; process is producing results using the input; and output is displaying the results.
+
+All identifiers must obey the following rules:
+    ■ An identifier is a sequence of characters that consists of letters, digits, underscores
+    (_), and dollar signs ($).
+
+    ■ An identifier must start with a letter, an underscore (_), or a dollar sign ($). It cannot
+    start with a digit.
+    ■ An identifier cannot be a reserved word. (See Appendix A for a list of reserved words.)
+    ■ An identifier cannot be true, false, or null.
+    ■ An identifier can be of any length.
+
+                For example, $2, ComputeArea, area, radius, and print are legal identifiers, whereas 
+                2A and d+4 are not because they do not follow the rules. The Java compiler detects illegal identifiers and reports syntax errors.
+
+Variables are used to represent values that may be changed in the program.
+
+The syntax for declaring a variable is
+    datatype variableName;
+Here are some examples of variable declarations:
+                int count; // Declare count to be an integer variable
+                double radius; // Declare radius to be a double variable
+                double interestRate; // Declare interestRate to be a double variable
+
+These examples use the data types int and double. Later you will be introduced to additional data types, such as byte, short, long, float, char, and boolean.
+If variables are of the same type, they can be declared together, as follows:
+                datatype variable1, variable2, ..., variablen;
+
+The variables are separated by commas. For example,
+                        int i, j, k; // Declare i, j, and k as int variables
+
+Variables often have initial values. You can declare a variable and initialize it in one step.
+Consider, for instance, the following code:
+    int count = 1;
+This is equivalent to the next two statements:
+        int count;
+        count = 1;
+You can also use a shorthand form to declare and initialize variables of the same type
+together. For example,
+        int i = 1, j = 2;
+
+A variable must be declared before it can be assigned a value. A variable declared in a method must be assigned a value before it can be used.
+Whenever possible, declare a variable and assign its initial value in one step. This will make the program easy to read and avoid programming errors.
+
+The scope of a variable is the part of the program where the variable can be referenced. 
+
+An assignment statement designates a value for a variable. An assignment statement can be used as an expression in Java.
+
+After a variable is declared, you can assign a value to it by using an assignment statement. In Java, the equal sign (=) is used as the assignment operator.
+
+The syntax for assignment statements is as follows:
+                variable = expression;
+
+An expression represents a computation involving values, variables, and operators that, taking them together, evaluates to a value. For example, consider the following code:
+                int y = 1;                                       // Assign 1 to variable y
+                double radius = 1.0;                             // Assign 1.0 to variable radius
+                int x = 5 * (3 / 2);                             // Assign the value of the expression to x
+                x = y + 1;                                       // Assign the addition of y and 1 to x
+                double area = radius * radius * 3.14159;         // Compute area
+
+A named constant is an identifier that represents a permanent value.
+
+Here is the syntax for declaring a constant:
+            final datatype CONSTANTNAME = value;
+
