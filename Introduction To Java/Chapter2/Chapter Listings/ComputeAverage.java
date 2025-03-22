@@ -8,7 +8,6 @@
 //Scanner is int the java.util package
 import java.util.Scanner;
 
-@SuppressWarnings("unused")
 public class ComputeAverage {
 
     /**

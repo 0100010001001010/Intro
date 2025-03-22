@@ -17,7 +17,7 @@ public class FixError {
     /**
      * @param args
      */
-    //The main method was missing
+    //The main method was missing static
     public static void main(String[] args) {
 
         double i = 50.0;

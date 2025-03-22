@@ -112,3 +112,210 @@ A named constant is an identifier that represents a permanent value.
 Here is the syntax for declaring a constant:
             final datatype CONSTANTNAME = value;
 
+Sticking with the Java naming conventions makes your programs easy to read and avoids errors.
+
+Listed below are the conventions for naming variables, methods, and classes.
+            Use lowercase for variables and methods. If a name consists of several words, con-
+            catenate them into one, making the first word lowercase and capitalizing the first
+            letter of each subsequent word—for example, the variables radius and area and
+            the method print.
+
+            Capitalize the first letter of each word in a class name—for example, the class names
+            ComputeArea and System.
+
+            Capitalize every letter in a constant, and use underscores between words—for example, the constants PI and MAX_VALUE.
+
+Java has six numeric types for integers and floating-point numbers with operators +, *, -, /, and %.
+
+TABLE 2.1 Numeric Data Types
+Name                                Range                                                                   Storage Size
+byte                     -2^7 to 2^7 - 1 (-128 to 127)                                                      8-bit signed
+short                    -215 to 215 - 1 (-32768 to 32767)                                                 16-bit signed
+int                      -231 to 231 - 1 (-2147483648 to 2147483647)                                       32-bit signed
+long                     -263 to 263 - 1                                                                   64-bit signed
+                         (i.e.,-9223372036854775808 to 9223372036854775807)
+float                    Negative range: -3.4028235E + 38 to -1.4E- 45                                     32-bit IEEE 754
+Positive range: 1.4E- 45 to 3.4028235E + 38
+double                   Negative range: -1.7976931348623157E + 308 to -4.9E- 324                          64-bit IEEE 754
+                         Positive range: 4.9E- 324 to 1.7976931348623157E + 308
+
+Java uses four types for integers: byte, short, int, and long.
+
+Java uses two types for floating-point numbers: float and double.
+
+TABLE 2.2 Methods for Scanner Objects
+Method                    Description
+nextDouble()             reads a number of the double type.
+nextByte()               reads an integer of the byte type.
+nextShort()              reads an integer of the short type.
+nextInt()                reads an integer of the int type.
+nextLong()               reads an integer of the long type.
+nextFloat()              reads a number of the float type.
+
+Here are examples for reading values of various types from the keyboard:
+        1  Scanner input = new Scanner(System.in);
+        2
+        3  System.out.print("Enter a byte value: ");
+        4  byte byteValue = input.nextByte();
+        5
+        6  System.out.print("Enter a short value: ");
+        7  short shortValue = input.nextShort();
+        8
+        9  System.out.print("Enter an int value: ");
+        10  int intValue = input.nextInt();
+        11
+        12 System.out.print("Enter a long value: ");
+        13 long longValue = input.nextLong();
+        14
+        15 System.out.print("Enter a float value: ");
+        16 float floatValue = input.nextFloat();
+
+If you enter a value with an incorrect range or format, a runtime error would occur. For example, you enter a value 128 for line 3, an error would occur because 128 is out of range
+for a byte type integer.
+
+TABLE 2.3       Numeric Operators
+Name            Meaning             Example            Result
++               Addition            34 + 1               35
+-               Subtraction         34.0 – 0.1           33.9
+*               Multiplication      300 * 30             9000
+/               Division            1.0 / 2.0            0.5
+%               Remainder           20 % 3               2
+
+
+A unary operator has only one operand; a binary operator has two.
+
+The Math.pow(a, b) method can be used to compute a^b ( TO THE POWER OF B ).
+
+Chapter 5 introduces more details on methods. For now, all you need to know is how to invoke the pow method to perform the exponent operation.
+
+A literal is a constant value that appears directly in a program.
+
+The float and double types are used to represent numbers with a decimal point.
+Why are they called floating-point numbers? These numbers are stored in scientific notation internally. 
+When a number such as 50.534 is converted into scientific notation,such as 5.0534E+1, its decimal point is moved (i.e., floated) to a new position.
+
+Java expressions are evaluated in the same way as arithmetic expressions.
+
+When more than one operator is used
+in an expression, the following operator precedence rule is used to determine the order of
+evaluation.
+        ■ Multiplication, division, and remainder operators are applied first. If an expression
+        contains several multiplication, division, and remainder operators, they are applied
+        from left to right.
+        ■ Addition and subtraction operators are applied last. If an expression contains several
+        addition and subtraction operators, they are applied from left to right.
+
+ You can invoke System.currentTimeMillis() to return the current time.
+
+You can use this method to obtain the current time, and then compute the current second,
+minute, and hour as follows.
+                1. Obtain the total milliseconds since midnight, January 1, 1970, in totalMilliseconds
+                by invoking System.currentTimeMillis() (e.g., 1203183068328 milliseconds).
+
+                2. Obtain the total seconds totalSeconds by dividing totalMilliseconds by 1000
+                (e.g., 1203183068328 milliseconds / 1000= 1203183068 seconds).
+
+                3. Compute the current second from totalSeconds % 60 (e.g., 1203183068 seconds
+                % 60= 8, which is the current second).
+
+                4. Obtain the total minutes totalMinutes by dividing totalSeconds by 60 (e.g.,
+                1203183068 seconds / 60= 20053051 minutes).
+
+                5. Compute the current minute from totalMinutes % 60 (e.g., 20053051 minutes %
+                60= 31, which is the current minute).
+
+                6. Obtain the total hours totalHours by dividing totalMinutes by 60 (e.g., 20053051
+                minutes / 60= 334217 hours).
+
+                7. Compute the current hour from totalHours % 24 (e.g., 334217 hours % 24= 17,
+                which is the current hour).
+
+The operators +,-,*, /, and % can be combined with the assignment operator to form augmented operators.
+
+TABLE 2.4 Augmented Assignment Operators
+Operator              Name                     Example                   Equivalent
++=              Addition assignment            i += 8                    i = i + 8
+-=             Subtraction assignment          i -= 8                    i = i – 8
+*=            Multiplication assignment        i *= 8                    i = i * 8
+/=             Division assignment             i /= 8                    i = i / 8
+%=             Remainder assignment            i %= 8                    i = i % 8
+
+
+There are no spaces in the augmented assignment operators. For example, + = should be +=.
+
+Like the assignment operator (=), the operators (+=, -=, *=, /=, %=) can be used to
+form an assignment statement as well as an expression. For example, in the following
+code, x += 2 is a statement in the first line and an expression in the second line.
+
+For example, the following code increments i by 1 and decrements j by 1.
+                            int i = 3, j = 3;
+                            i++; // i becomes 4
+                            j——; // j becomes 2
+
+i++ is pronounced as i plus plus and i—— as i minus minus. These operators are known as
+postfix increment (or postincrement) and postfix decrement (or postdecrement), because the
+operators ++ and —— are placed after the variable. 
+
+These operators can also be placed beforethe variable. For example,
+                    int i = 3, j = 3;
+                    ++i; // i becomes 4
+                    ——j; // j becomes 2
+
+TABLE 2.5 Increment and Decrement Operators
+Operator                  Name                        Description                           Example (assume i= 1)
+++var                  preincrement             Increment var by 1, and use the             int j = ++i;
+                                                new var value in the statement              // j is 2, i is 2
+var++                  postincrement            Increment var by 1, but use the             int j = i++;
+                                                original var value in the statement         // j is 1, i is 2
+
+——var                  predecrement             Decrement var by 1, and use the             int j = ——i;
+                                                new var value in the statement              // j is 0, i is 0
+               
+
+var——                  postdecrement            Decrement var by 1, and use the             int j = i——;
+                                                original var value in the statement         // j is 1, i is 0
+
+Floating-point numbers can be converted into integers using explicit casting.
+
+Java automatically converts the integer to a floating-point value. So, 3 * 4.5 is same as 3.0 * 4.5.
+
+Casting is an operation that converts a value of one data type into a value of another data type.
+
+ Casting a type with a small range to a type with a larger range is known as widening a type.
+
+ Casting a type with a large range to a type with a smaller range is known as narrowing a type.
+
+ The syntax for casting a type is to specify the target type in parentheses, followed by the variable’s name or the value to be cast. For example, the following statement
+                        
+                        System.out.println((int)1.7);
+
+The software development life cycle is a multistage process that includes requirements specification, analysis, design, implementation, testing, deployment, and maintenance.
+
+Software products, no matter how large or how small, have the same life cycle: requirements specification, analysis, design, implementation, testing, deployment, and maintenance
+
+Requirements specification is a formal process that seeks to understand the problem that the software will address and to document in detail what the software system needs to do.
+
+System analysis seeks to analyze the data flow and to identify the system’s input and output.
+
+System design is to design a process for obtaining the output from the input.
+
+Implementation involves translating the system design into programs.
+
+Testing ensures that the code meets the requirements specification and weeds out bugs. An independent team of software engineers not involved in the design and implementation of the product usually conducts such testing
+
+Deployment makes the software available for use. Depending on the type of software, it may be installed on each user’s machine or installed on a server accessible on the Internet.
+
+Maintenance is concerned with updating and improving the product.
+
+This section presents a program that breaks a large amount of money into smaller units.
+
+Common elementary programming errors often involve undeclared variables, uninitialized variables, integer overflow, unintended integer division, and round-off errors.
+
+When a variable is assigned a value that is too large (in size) to be stored, it causes overflow.
+
+When a floating-point number is too small (i.e., too close to zero) to be stored, it causes underflow.
+
+A round-off error, also called a rounding error, is the difference between the calculated approximation of a number and its exact mathematical value.
+
+
+
