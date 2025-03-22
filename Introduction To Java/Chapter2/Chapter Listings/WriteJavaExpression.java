@@ -5,7 +5,7 @@
  * 21 MAR 2025
  */
 
-public class writeJavaExpression {
+public class WriteJavaExpression {
 
     //equation
     //result = ( (m) * ( Math.pow(r, 2)) ); <------commented out to avoid errors

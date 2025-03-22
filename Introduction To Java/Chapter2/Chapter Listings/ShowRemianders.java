@@ -11,7 +11,7 @@
  * 21 MAR 2025
  */
 
-public class showRemianders {
+public class ShowRemianders {
 
     /**
      * @param args
