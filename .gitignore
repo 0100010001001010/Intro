@@ -1,0 +1,9 @@
+# Ignore all .class files
+*.class
+
+# Ignore all files in target directory
+target/
+
+# Ignore IDE specific files
+.vscode/
+.idea/ 
