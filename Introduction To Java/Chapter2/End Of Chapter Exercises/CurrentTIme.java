@@ -30,19 +30,17 @@ public class CurrentTIme {
             input.close();
         }
 
-        // calculate the current time and display to the console
-        // Convert the current time in milliseconds to an Instant object
-        Instant instant = Instant.ofEpochMilli(totalmilliseconds);
+        // Get current time in GMT and target timezone
+        Instant now = Instant.ofEpochMilli(totalmilliseconds);
+        ZonedDateTime gmtTime = now.atZone(ZoneOffset.UTC);
+        ZonedDateTime localTime = gmtTime.withZoneSameInstant(ZoneOffset.ofHours(offset));
 
-        // Convert Instant to ZonedDateTime in GMT (UTC)
-        ZonedDateTime gmtTime = instant.atZone(ZoneOffset.UTC);
+        // Format timezone offset string
+        String offsetStr = String.format("GMT%s%d", offset >= 0 ? "+" : "", offset);
 
-        // Adjust the time by applying the time zone offset
-        ZonedDateTime targetTime = gmtTime.withZoneSameInstant(ZoneOffset.ofHours(offset));
-
-        // Display the current time in GMT and the converted time in the specified time zone
-        System.out.println("Current time in GMT: " + gmtTime.toLocalTime());
-        System.out.println("Converted time in GMT" + (offset >= 0 ? "+" : "") + offset + ": " + targetTime.toLocalTime());  // Used API for this
+        // Display times
+        System.out.printf("Current time in GMT: %s%n", gmtTime.toLocalTime());
+        System.out.printf("Current time in %s: %s%n", offsetStr, localTime.toLocalTime());
 
     }
 }
