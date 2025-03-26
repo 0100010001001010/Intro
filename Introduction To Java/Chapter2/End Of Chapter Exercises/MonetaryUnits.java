@@ -1,45 +1,34 @@
-/* 
- * Here are the steps in developing the program:
-            1. Prompt the user to enter the amount as a decimal number, such as 11.56.
-
-            2. Convert the amount (e.g., 11.56) into cents (1156).
-
-            3. Divide the cents by 100 to find the number of dollars. Obtain the remaining cents using
-            the cents remainder 100.
-
-            4. Divide the remaining cents by 25 to find the number of quarters. Obtain the remaining
-            cents using the remaining cents remainder 25.
-
-            5. Divide the remaining cents by 10 to find the number of dimes. Obtain the remaining
-            cents using the remaining cents remainder 10.
-
-            6. Divide the remaining cents by 5 to find the number of nickels. Obtain the remaining
-            cents using the remaining cents remainder 5.
-
-            7. The remaining cents are the pennies.
-
-            8. Display the result.
+/*
+ * Rewrite Listing 2.10, ComputeChange.java, to fix the possible loss of accuracy when converting a double value to an int value. Enter the input as an integer whose last two digits represent the cents.
+ * For example, the input 1156 represents 11 dollars and 56 cents.
+ * 
+ * 
+ * DJ Booker
+ * 2025-03-26
  */
 
 // import scanner
-import java.util.*;
+import java.util.Scanner;
 
-public class ComputeChange {
-
+public class MonetaryUnits {
     public static void main(String[] args) {
 
-        try (// create scanner
+        // create scanner
+        try (
                 Scanner input = new Scanner(System.in)) {
 
             // receive the amount
             System.out.print(
-                    "Enter an amount in double, for example 1156: ");
-            double amount = input.nextDouble();
+                    "Enter an amount as an integer (e.g., 1156 for $11.56): ");
+            int amount = input.nextInt();
+            int dollars = amount / 100; // save the dollars
+            int cents = amount % 100; // save the cents
+            double finalAmount = dollars + (cents / 100.0); // convert to double
             input.close();
 
-            int remainingAmount = (int) (amount * 100);
+            int remainingAmount = (int) (finalAmount * 100);
 
-            // find the number of one dollars 
+            // find the number of one dollars
             int numberOfOneDollars = remainingAmount / 100;
             remainingAmount = remainingAmount % 100;
 
@@ -66,5 +55,6 @@ public class ComputeChange {
             System.out.println("   " + numberOfNickles + " nickles");
             System.out.println("   " + numberOfPennies + " pennies");
         }
+
     }
 }

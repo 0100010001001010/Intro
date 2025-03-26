@@ -35,10 +35,15 @@ public class FutureInvestmentValue {
             // close scanner
             input.close();
 
-            // display future investment value to the console
-            double futureInvestmentValue = investmentAmount
-                    * (Math.pow(1 + ((annualInterestRate / 100)), numberOfYears * 12));
-            System.out.println("Accumulated value is $" + futureInvestmentValue);  // <------------------ calculation issue here
+            // Convert annual rate to monthly decimal
+            double monthlyInterestRate = annualInterestRate / 1200; 
+
+            // Calculate future investment value
+            double futureInvestmentValue = Math
+                    .round(investmentAmount * Math.pow(1 + monthlyInterestRate, numberOfYears * 12) * 100.0) / 100.0;
+
+            // Display result to the console
+            System.out.println("Accumulated value is $" + futureInvestmentValue);
 
         }
 
