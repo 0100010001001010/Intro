@@ -1,0 +1,11 @@
+The program can decide which statements to execute based on a condition
+
+ A Boolean expression is an expression that evaluates to a Boolean value: true or false.
+
+ The boolean data type declares a variable with the value either true or false.
+
+ An if statement is a construct that enables a program to specify alternative paths of execution.
+
+ A flowchart is a diagram that describes an algorithm or process, showing the steps as boxes
+of various kinds, and their order by connecting these with arrows.
+

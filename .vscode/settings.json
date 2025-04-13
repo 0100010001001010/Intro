@@ -1,3 +1,18 @@
 {
     "java.debug.settings.onBuildFailureProceed": true
 }
+
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Run Java",
+        "request": "launch",
+        "mainClass": "CheckPointOutput",
+        "projectName": "Intro",
+        "console": "internalConsole"
+      }
+    ]
+  }
+  
